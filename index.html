@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Resume Website</title>
   <style>
     body {
@@ -13,7 +13,7 @@
     /* HEADER */
     header {
       background-color: #333;
-      color: white;
+      color: #fff;
       padding: 20px;
       text-align: center;
       position: fixed;
@@ -22,13 +22,13 @@
       z-index: 1000;
     }
 
-    /* NAVBAR */
+    /* NAVIGATION */
     nav {
       display: flex;
       justify-content: center;
       background-color: #444;
       position: fixed;
-      top: 100px; /* Positioned below header */
+      top: 100px; /* Just below header */
       width: 100%;
       z-index: 999;
     }
@@ -47,10 +47,9 @@
 
     /* MAIN CONTENT */
     main {
-      padding: 160px 20px 80px; /* Leaves space for header and nav */
-      background-color: #f4f4f4;
+      padding: 160px 20px 80px; /* Space for header and nav */
+      background-color: #f9f9f9;
       min-height: 70vh;
-      text-align: center;
     }
 
     /* FOOTER */
@@ -63,8 +62,15 @@
       bottom: 0;
       width: 100%;
     }
+
+    img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -74,21 +80,21 @@
     <p>📞 +91-1234567890 | ✉️ your.email@example.com</p>
   </header>
 
-  <!-- NAVIGATION MENU -->
+  <!-- NAVIGATION BAR -->
   <nav>
-    <a href="#" onclick="loadContent('home.html')">Home</a>
-    <a href="#" onclick="loadContent('about.html')">About Me</a>
-    <a href="#" onclick="loadContent('skills.html')">Skills</a>
-    <a href="#" onclick="loadContent('certifications.html')">Certifications</a>
-    <a href="#" onclick="loadContent('employment.html')">Employment History</a>
-    <a href="#" onclick="loadContent('qualification.html')">Qualification</a>
+    <a href="#" onclick="loadPage('home.html')">Home</a>
+    <a href="#" onclick="loadPage('about.html')">About Me</a>
+    <a href="#" onclick="loadPage('skills.html')">Skills</a>
+    <a href="#" onclick="loadPage('certifications.html')">Certifications</a>
+    <a href="#" onclick="loadPage('employment.html')">Employment History</a>
+    <a href="#" onclick="loadPage('qualification.html')">Qualification</a>
   </nav>
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
-    <h2>Welcome to My Resume Website</h2>
-    <img src="https://via.placeholder.com/500x300.png?text=Man+Working+on+Desk" alt="Man working on a desk" style="max-width: 100%; border-radius: 10px;">
-    <p>Click on the menu to explore different sections of my profile!</p>
+    <h2>Welcome to My Portfolio!</h2>
+    <img src="images/hero.jpg" alt="Man working on a desk" />
+    <p>This is the homepage. Use the menu above to explore my resume!</p>
   </main>
 
   <!-- FOOTER -->
@@ -96,19 +102,21 @@
     <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
   </footer>
 
-  <!-- JS TO LOAD PAGES -->
+  <!-- JAVASCRIPT TO LOAD PAGES -->
   <script>
-    function loadContent(page) {
+    function loadPage(page) {
       fetch(page)
         .then(response => {
-          if (!response.ok) throw new Error('Page not found');
+          if (!response.ok) {
+            throw new Error('Page not found.');
+          }
           return response.text();
         })
         .then(html => {
           document.getElementById('main-content').innerHTML = html;
         })
-        .catch(err => {
-          document.getElementById('main-content').innerHTML = `<p>${err.message}</p>`;
+        .catch(error => {
+          document.getElementById('main-content').innerHTML = `<p>${error.message}</p>`;
         });
     }
   </script>
