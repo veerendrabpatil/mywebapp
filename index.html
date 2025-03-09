@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Resume Site</title>
+  <title>Fixed Header and Footer - Resume</title>
   <style>
     body {
       margin: 0;
@@ -11,24 +11,32 @@
 
     /* HEADER */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       background-color: #333;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 20px 0;
+      z-index: 1000;
     }
 
     /* NAVIGATION */
     nav {
+      position: fixed;
+      top: 80px; /* Below header */
+      left: 0;
+      width: 100%;
       background-color: #444;
-      overflow: hidden;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
     }
 
     nav a {
-      float: left;
-      display: block;
       color: white;
-      text-align: center;
-      padding: 14px 16px;
+      padding: 14px 20px;
       text-decoration: none;
     }
 
@@ -39,17 +47,31 @@
 
     /* MAIN CONTENT */
     main {
+      margin-top: 130px; /* Enough space for header + nav */
+      margin-bottom: 60px; /* Space for footer */
       padding: 20px;
       background-color: #f4f4f4;
-      min-height: 70vh;
+      min-height: calc(100vh - 190px); /* Total minus header/nav/footer */
+      overflow-y: auto;
     }
 
     /* FOOTER */
     footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background-color: #333;
       color: white;
       text-align: center;
       padding: 10px;
+      z-index: 1000;
+    }
+
+    img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -64,30 +86,4 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="#" onclick="showContent('Home')">Home</a>
-    <a href="#" onclick="showContent('About Me')">About Me</a>
-    <a href="#" onclick="showContent('Skills')">Skills</a>
-    <a href="#" onclick="showContent('Certifications')">Certifications</a>
-    <a href="#" onclick="showContent('Employment History')">Employment History</a>
-    <a href="#" onclick="showContent('Qualification')">Qualification</a>
-  </nav>
-
-  <!-- MAIN CONTENT -->
-  <main id="main-content">
-    <h2>Welcome!</h2>
-    <p>This is your homepage content.</p>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
-  </footer>
-
-  <script>
-    function showContent(section) {
-      document.getElementById('main-content').innerHTML = `<h2>${section}</h2><p>Content for ${section} goes here...</p>`;
-    }
-  </script>
-
-</body>
-</html>
+    <a href="#" onclick="showContent('Home
