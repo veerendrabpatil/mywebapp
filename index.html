@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume Website</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
 
+    /* HEADER */
     header {
       background-color: #333;
-      color: #fff;
+      color: white;
       padding: 20px;
       text-align: center;
       position: fixed;
-      width: 100%;
       top: 0;
+      width: 100%;
       z-index: 1000;
     }
 
+    /* NAVBAR */
     nav {
       display: flex;
       justify-content: center;
       background-color: #444;
       position: fixed;
-      top: 100px; /* Below header */
+      top: 100px; /* Positioned below header */
       width: 100%;
       z-index: 999;
     }
 
     nav a {
-      color: #fff;
-      padding: 14px 20px;
+      color: white;
+      padding: 15px 20px;
       text-decoration: none;
-      font-size: 16px;
+      display: block;
     }
 
     nav a:hover {
       background-color: #ddd;
-      color: #000;
+      color: black;
     }
 
+    /* MAIN CONTENT */
     main {
-      padding: 160px 20px 80px; /* Account for fixed header/nav */
+      padding: 160px 20px 80px; /* Leaves space for header and nav */
+      background-color: #f4f4f4;
       min-height: 70vh;
-      background-color: #f8f8f8;
+      text-align: center;
     }
 
+    /* FOOTER */
     footer {
       background-color: #333;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 10px;
       position: fixed;
       bottom: 0;
       width: 100%;
-    }
-
-    img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
     }
   </style>
 </head>
@@ -70,12 +69,12 @@
 
   <!-- HEADER -->
   <header>
-    <h1>VEERENDRA B PATIL</h1>
-    <p>Project Manager</p>
-    <p>📞 +91-9632900669 | ✉️ veer.patil@gmail.com</p>
+    <h1>Your Name</h1>
+    <p>Job Title</p>
+    <p>📞 +91-1234567890 | ✉️ your.email@example.com</p>
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAVIGATION MENU -->
   <nav>
     <a href="#" onclick="loadContent('home.html')">Home</a>
     <a href="#" onclick="loadContent('about.html')">About Me</a>
@@ -85,12 +84,11 @@
     <a href="#" onclick="loadContent('qualification.html')">Qualification</a>
   </nav>
 
-  <!-- MAIN CONTENT AREA -->
+  <!-- MAIN CONTENT -->
   <main id="main-content">
-    <!-- Default content loaded when page opens -->
-    <h2>Welcome to My Portfolio!</h2>
-    <img src="images/hero-image.jpg" alt="Man working on a laptop at a desk">
-    <p>This is my portfolio showcasing my work and skills. Use the menu above to navigate through different sections.</p>
+    <h2>Welcome to My Resume Website</h2>
+    <img src="https://via.placeholder.com/500x300.png?text=Man+Working+on+Desk" alt="Man working on a desk" style="max-width: 100%; border-radius: 10px;">
+    <p>Click on the menu to explore different sections of my profile!</p>
   </main>
 
   <!-- FOOTER -->
@@ -98,21 +96,19 @@
     <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
   </footer>
 
-  <!-- SCRIPT TO LOAD CONTENT -->
+  <!-- JS TO LOAD PAGES -->
   <script>
     function loadContent(page) {
       fetch(page)
         .then(response => {
-          if (!response.ok) {
-            throw new Error("Page not found");
-          }
+          if (!response.ok) throw new Error('Page not found');
           return response.text();
         })
-        .then(data => {
-          document.getElementById('main-content').innerHTML = data;
+        .then(html => {
+          document.getElementById('main-content').innerHTML = html;
         })
-        .catch(error => {
-          document.getElementById('main-content').innerHTML = `<p>${error.message}</p>`;
+        .catch(err => {
+          document.getElementById('main-content').innerHTML = `<p>${err.message}</p>`;
         });
     }
   </script>
