@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Name - Portfolio</title>
   <style>
-    /* Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
       font-family: Arial, sans-serif;
     }
 
@@ -22,28 +20,15 @@
       min-height: 100vh;
     }
 
-    /* Header */
     header {
-      background-color: #add8e6; /* Light blue */
+      background-color: #add8e6;
       color: #fff;
       padding: 20px 40px;
       text-align: center;
-      animation: fadeSlideDown 1s ease-out;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin: 5px 0;
-    }
-
-    /* Nav Bar */
     nav {
-      background-color: #87ceeb; /* Slightly deeper blue */
+      background-color: #87ceeb;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -66,39 +51,21 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
       transition: background-color 0.3s;
     }
 
     nav ul li a:hover {
-      background-color: #4682b4; /* Hover color */
+      background-color: #4682b4;
       border-radius: 5px;
     }
 
-    /* Main Content */
     main {
       flex: 1;
       padding: 40px 20px;
       max-width: 1000px;
       margin: 0 auto;
-    }
-
-    section {
-      margin-bottom: 60px;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    section h2 {
-      color: #4682b4;
-      margin-bottom: 15px;
-    }
-
-    section p, ul {
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
+      animation: fadeIn 0.5s ease-in;
     }
 
     footer {
@@ -107,41 +74,11 @@
       text-align: center;
       padding: 20px 40px;
       font-size: 0.9rem;
-      animation: fadeSlideUp 1s ease-out;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
-    }
-
-    @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-      }
-
-      nav ul li {
-        margin: 5px 0;
-      }
     }
   </style>
 </head>
@@ -150,80 +87,53 @@
   <header>
     <h1>Your Name</h1>
     <p>Job Title</p>
-    <p>📞 Phone: (123) 456-7890</p>
-    <p>✉️ Email: your.email@example.com</p>
+    <p>📞 Phone: (123) 456-7890 | ✉️ your.email@example.com</p>
   </header>
 
   <!-- Navigation Bar -->
   <nav>
     <ul>
-      <li><a href="#home">Home Page</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#employment">Employment History</a></li>
+      <li><a onclick="loadPage('home.html')">Home Page</a></li>
+      <li><a onclick="loadPage('about.html')">About Me</a></li>
+      <li><a onclick="loadPage('skills.html')">Skills</a></li>
+      <li><a onclick="loadPage('certifications.html')">Certifications</a></li>
+      <li><a onclick="loadPage('employment.html')">Employment History</a></li>
     </ul>
   </nav>
 
-  <main>
-    <!-- Home Section -->
-    <section id="home">
-      <h2>Welcome to My Portfolio</h2>
-      <p>Hello! I'm [Your Name], a passionate [Job Title] with experience in [mention your expertise briefly]. This is my personal portfolio website where you can learn more about my professional journey, skills, and projects.</p>
-      <p>Feel free to browse around and get in touch if you'd like to collaborate or just say hi!</p>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>[Write about yourself here. Talk about your background, education, interests, and career goals.]</p>
-      <p>Example: I'm a dedicated software developer with 5 years of experience building responsive websites and applications. I love learning new technologies and applying them to real-world problems.</p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML5, CSS3, JavaScript</li>
-        <li>React, Angular, Vue.js</li>
-        <li>Node.js, Express</li>
-        <li>Responsive Design & Mobile Development</li>
-        <li>Version Control (Git, GitHub)</li>
-        <li>UI/UX Principles</li>
-      </ul>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Certified Front-End Developer - XYZ Institute</li>
-        <li>Google UX Design Certificate</li>
-        <li>Responsive Web Design Certification - freeCodeCamp</li>
-      </ul>
-    </section>
-
-    <!-- Employment History Section -->
-    <section id="employment">
-      <h2>Employment History</h2>
-      <ul>
-        <li>
-          <strong>Front-End Developer</strong> at ABC Company  
-          <br /> Jan 2021 - Present  
-          <br /> - Developed and maintained company website and web apps  
-        </li>
-        <li>
-          <strong>Web Developer Intern</strong> at XYZ Solutions  
-          <br /> Jun 2020 - Dec 2020  
-          <br /> - Assisted in building responsive websites for clients  
-        </li>
-      </ul>
-    </section>
+  <!-- Content Loader -->
+  <main id="content">
+    <!-- Default content goes here -->
   </main>
 
   <footer>
     &copy; 2025 Your Name. All rights reserved.
   </footer>
+
+  <!-- JavaScript for loading pages dynamically -->
+  <script>
+    function loadPage(page) {
+      fetch(page)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Page not found');
+          }
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
+        })
+        .catch(error => {
+          document.getElementById('content').innerHTML = '<p>Sorry, the page could not be loaded.</p>';
+          console.error(error);
+        });
+    }
+
+    // Load home page by default on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadPage('home.html');
+    });
+  </script>
 
 </body>
 </html>
