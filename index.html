@@ -1,89 +1,146 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name - Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-        .banner {
-            width: 100%;
-            height: 400px;
-            background: url('mygoaimage.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-        }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
 
-        nav {
-            background: #333;
-            padding: 10px;
-        }
+    header h1 {
+      margin: 0;
+    }
 
-            nav ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-            }
+    header p {
+      margin: 5px 0;
+    }
 
-                nav ul li {
-                    position: relative;
-                    margin: 0 20px;
-                    color: white;
-                    cursor: pointer;
-                }
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+    }
 
-                    nav ul li ul {
-                        display: none;
-                        position: absolute;
-                        background: #444;
-                        list-style: none;
-                        padding: 10px;
-                        top: 20px;
-                        left: 0;
-                    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
 
-                    nav ul li:hover ul {
-                        display: block;
-                    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-                    nav ul li ul li {
-                        padding: 5px 10px;
-                    }
-    </style>
+    section {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Optional styling for sections */
+    .section-title {
+      color: #333;
+      border-bottom: 2px solid #444;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
-    <div class="banner">Welcome to My Website</div>
 
-    <nav>
-        <ul>
-            <li>
-                Finance
-                <ul>
-                    <li>Investments</li>
-                    <li>Budgeting</li>
-                    <li>Tax Planning</li>
-                </ul>
-            </li>
-            <li>
-                Learning
-                <ul>
-                    <li>Courses</li>
-                    <li>Resources</li>
-                    <li>Books</li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+  <!-- Header -->
+  <header>
+    <h1>Veerendra B Patil</h1>
+    <p>Senior Project Manager</p>
+    <p>📞 Phone: +91-9632900669 | ✉️ Email: veer.patil@gmail.com</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#employment">Employment History</a>
+    <a href="#qualification">Qualification</a>
+  </nav>
+
+  <!-- Content Sections -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Experienced Senior Development Manager with a proven track record in 
+Agile Software Development and Project Management. Skilled in handling Agile 
+Projects, serving as a Scrum Master, and overseeing Web Development and 
+Migration Projects. Adept in Service Delivery, excelling in application Run & 
+Maintain Projects. Proficient in resource management, financials, budgeting, and 
+escalation & situation management. With a Bachelor of Engineering from VTU, 
+Belgaum, I bring comprehensive expertise to drive successful project outcomes. </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <ul>
+      <li>Skill 1</li>
+      <li>Skill 2</li>
+      <li>Skill 3</li>
+      <li>Skill 4</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <ul>
+      <li>A-CSM (Advanced - Certified Scrum Master) by Scrum Alliance - Jun-2024</li>
+      <li>PMP (Project Management Professional) by PMI (Project Management Institute) - Oct-2016</li>
+      <li>ITIL Foundation Certification in IT Service Management by AXELOS - Oct-2018</li>
+    </ul>
+  </section>
+
+  <section id="employment">
+    <h2 class="section-title">Employment History</h2>
+    <h3>Epsilon, A Publicis Groupe Company</h3>
+    <p>Senior Manager, Development</p>
+    <p>Description of your responsibilities and achievements.</p>
+
+    <h3>Previous Company</h3>
+    <p>Role / Position - Duration</p>
+    <p>Description of your responsibilities and achievements.</p>
+  </section>
+
+  <section id="qualification">
+    <h2 class="section-title">Qualification</h2>
+    <ul>
+      <li>Degree / Course - Institution Name - Year</li>
+      <li>Degree / Course - Institution Name - Year</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
+  </footer>
+
 </body>
 </html>
