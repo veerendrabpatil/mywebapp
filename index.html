@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VEERENDRA B PATIL</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     header {
@@ -16,22 +15,27 @@
       color: white;
       padding: 20px;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
     nav {
       background-color: #444;
       display: flex;
       justify-content: center;
+      position: fixed;
+      width: 100%;
+      top: 80px;
+      z-index: 999;
     }
 
     nav a {
       color: white;
       padding: 14px 20px;
       text-decoration: none;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -39,25 +43,9 @@
       color: black;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      background-color: #f4f4f4;
-    }
-
-    .hero img {
-      max-width: 500px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .hero-text {
-      margin-top: 20px;
-      text-align: center;
+    main {
+      padding: 160px 20px 80px 20px;
+      min-height: 70vh;
     }
 
     footer {
@@ -69,40 +57,136 @@
       bottom: 0;
       width: 100%;
     }
+
+    .section {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img.hero-image {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <h1>Your Name</h1>
-    <p>Job Title</p>
-    <p>📞 Phone: +91-1234567890 | ✉️ your.email@example.com</p>
+    <h1>VEERENDRA B PATIL</h1>
+    <p>Project Manager</p>
+    <p>📞 Phone: +91-9632900669 | ✉️ veer.patil@gmail.com.com</p>
   </header>
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="skills.html">Skills</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="employment.html">Employment History</a>
-    <a href="qualification.html">Qualification</a>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('about')">About Me</a>
+    <a onclick="showSection('skills')">Skills</a>
+    <a onclick="showSection('certifications')">Certifications</a>
+    <a onclick="showSection('employment')">Employment History</a>
+    <a onclick="showSection('qualification')">Qualification</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="images/hero-image.jpg" alt="Man working on a laptop at a desk">
-    <div class="hero-text">
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <div id="home" class="section active">
       <h2>Welcome to My Portfolio!</h2>
+      <img src="images/hero-image.jpg" alt="Man working on a laptop at a desk" class="hero-image">
       <p>I am a passionate professional with skills in software development, eager to contribute and grow.</p>
     </div>
-  </section>
+
+    <!-- About Me Section -->
+    <div id="about" class="section">
+      <h2>About Me</h2>
+      <p>This is the section where you describe yourself. Mention your professional background, career goals, and personal interests.</p>
+    </div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+
+      <h3>Management Skills</h3>
+      <ul>
+        <li>Team Leadership</li>
+        <li>Project Planning & Execution</li>
+        <li>Strategic Decision Making</li>
+        <li>Stakeholder Communication</li>
+        <li>Time Management</li>
+        <li>Conflict Resolution</li>
+      </ul>
+
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React.js / Angular</li>
+        <li>Node.js / Express.js</li>
+        <li>Version Control (Git, GitHub)</li>
+        <li>RESTful APIs</li>
+        <li>Database Management (MySQL, MongoDB)</li>
+      </ul>
+    </div>
+
+    <!-- Certifications Section -->
+    <div id="certifications" class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Certification 1</li>
+        <li>Certification 2</li>
+        <li>Certification 3</li>
+      </ul>
+    </div>
+
+    <!-- Employment History Section -->
+    <div id="employment" class="section">
+      <h2>Employment History</h2>
+      <h3>Company Name</h3>
+      <p>Role / Position - Duration</p>
+      <p>Description of your responsibilities and achievements.</p>
+
+      <h3>Previous Company</h3>
+      <p>Role / Position - Duration</p>
+      <p>Description of your responsibilities and achievements.</p>
+    </div>
+
+    <!-- Qualification Section -->
+    <div id="qualification" class="section">
+      <h2>Qualification</h2>
+      <ul>
+        <li>Degree / Course - Institution Name - Year</li>
+        <li>Degree / Course - Institution Name - Year</li>
+      </ul>
+    </div>
+
+  </main>
 
   <!-- Footer -->
   <footer>
     <p>I hereby declare that the information provided above is true to the best of my knowledge.</p>
   </footer>
+
+  <!-- Script to Show Sections -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
